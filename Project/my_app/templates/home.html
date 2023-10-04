@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block heading %}{% endblock %}
+
+{% block content %}
+<html>
+<head>
+    <style>
+        body{
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image:linear-gradient(rgb(0,0,0,0.2),rgb(0,0,0,0.2),rgb(0,0,0,0.2)),url("{{url_for('static',filename='image/bg1.png')}}")
+            }
+    </style>
+</head>
+<body><center>
+    <form method="POST">
+        <br><br>
+        <table>
+            <h1 style="color:rgb(255, 255, 255);font-size:40px;;"><i>Enter your information</i> <i class="fa fa-institution" style="font-size:30px"></i></h1>
+            <tr><td><label style="color: white;font-size:20px;"><b>Name</b></label><br /><br /></td><td><input name="name" placeholder="Name"><br /><br /></td></tr>
+            <br><br>
+            <tr><td><label style="color: white;font-size:20px;"><b>Age</b></label><br /><br /></td><td><input name="age" placeholder="Age"><br /><br /></td></tr>
+            <br><br>
+            <tr><td style="color: white;font-size:20px;"><b>Group</b>&nbsp;<br /><br /></td>
+            <td>
+                <select name="Group" style="width:168px;height:22px;">
+                    <option>Select Group</option>
+                    <option>B.sc</option>
+                    <option>B.com</option>
+                    <option>M.sc</option>
+                    <option>M.com</option>
+                    <option>BBA</option>
+                    <option>MBA</option>
+                </select><br /><br /></td></tr>
+            <br><br>
+            <tr><td><label style="color: white;font-size:20px;"><b>Depart</b></label>&nbsp;<br /><br /></td><td><input name="Depart" placeholder="Depart">&nbsp;<br /><br /></td></tr>
+        <br><br>
+        </table>
+        <table>
+            <center><tr><td><input style="background-color: white;" type="submit"></td></tr></center>
+        </table>
+    </form></center>
+</body>
+</html>
+{% endblock %}

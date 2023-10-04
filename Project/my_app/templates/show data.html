@@ -1,0 +1,29 @@
+{% block heading%}<center><br /><font face="lato" size="6">SHOW DATA</font></center>{% endblock %}
+
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+<body style="background-color:#BCC6CC;" link="#000" alink="017bf5" vlink="#000"><center>
+    <br><br><br>
+    <font face="lato" size="6">Students Data In Data Base</font> <i class="fa fa-database" style="font-size:30px;color:#017bf5;"></i>
+    <br><br><br>
+    <table border="1" width="50%" height="35%">
+        <tr style="background-color:aaabab;">
+            <th>NAME</th><th>AGE</th><th>GROUP</th><th>DEPART</th>
+        </tr>
+        {% for data in data %}
+        <tr>
+            <td align="center">{{ data.name }}</td><td align="center">{{ data.age }}</td><td align="center">{{ data.Group }}</td><td align="center">{{ data.Depart }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br /><br /><br />
+        <a href="home">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="add data">Add Data</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="about">About</a>
+    </center>
+</body>
+</html>
+{% endblock %}
