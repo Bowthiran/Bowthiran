@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            color: white;
+        }
+        input{
+            width: 15%;
+        }
+        h1{
+            font-weight: 800;
+            font-style:initial;
+            padding-top: 5%;
+            padding-bottom: 6%;
+        }
+        h2{
+            font-weight: 500;
+            margin-top: 3%;
+            margin-bottom: 6%;
+        }
+    </style>
+<body bgcolor="black">
+    <center>
+    <h1>Guess&nbsp;&nbsp;The&nbsp;&nbsp;Number&nbsp;&nbsp;Game</h1>
+    <input id="Guess">
+    <button onclick="checknumber()">CHECK</button>
+    <h2 id="Result">You Are Right&nbsp;/&nbsp;Wrong..!</h2>
+    <h3 id="score">Your Score : 10</h3>
+    <hr>
+    <h4>About.<h4>
+    <pre>Instructions
+        Enter the range of numbers you want the target number to be between, and press New Target
+        Enter your guess
+        See if your guess is too high or too low
+        Change your guess
+        The app will tell you when you are right, and how many guesses you had
+        </pre>
+        <p>Thank You..!</p>
+    <h4>Copyright 2023 by Refsnes Data. All Rights Reserved.</h4>
+    </center>
+</body>
+</html>
+
+<script>
+    var guess = document.getElementById("Guess")
+    var result = document.getElementById("Result")
+    var score = document.getElementById("score")
+    var ans = 10
+    var rand = Math.floor(Math.random()*10)
+    
+    function checknumber()
+    {
+        var enternumber = guess.value
+        if(enternumber == rand)
+        {
+            result.textContent = "Your Answer is Right..!"
+            alert("You Own The Guess The Number Game...!")
+        }
+        else
+        {   ans -= 1
+            score.textContent = "Youe Scroe : "+ ans
+            result.textContent = "Your Answer is Wrong..!"
+        }
+    }
+</script>
