@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+    <style>
+        #bg{
+            background-image:url("imag.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            align-content:space-evenly;
+            height: 550px;
+            width: 420px;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid silver;
+            border-radius: 20px;
+            align-items: center;
+            margin:auto;
+            margin-top: 80px;
+            backdrop-filter: blur(5px);
+        }
+        #welcome{
+            color: silver;
+        }
+        #input{
+            margin-top: 30px;
+            margin-left: 50px;
+            color:silver;
+            width: 200px;
+            border: none;
+            outline: none;
+            background-color:rgb(0,0,0,0.5);
+            padding: 10px;
+            padding-left: 15px;
+            font-size: 1rem;
+            border-radius: 25px;
+        }
+        #add{
+            padding: 10px;
+            border:none;
+            outline:none;
+            color:silver;
+            font-size:1rem;
+            background-color:rgb(0,0,0,0.5);
+            margin-left:10px;
+            border-radius:20px;
+        }
+        #del{
+            padding:9px;
+            border: none;
+            outline: none;
+            color: silver; 
+            background-color:rgb(0,0,0,0.5);
+            border-radius: 20px;
+        }
+        ul li{
+            display: flex;
+            justify-content:space-between;
+            padding: 1rem;
+            color:white;
+        }
+        </style>
+</head>
+    <body id="bg"><center>
+        <h1 id="welcome">Todo Task</h1>
+        <input id="input" placeholder="Enter The Todo List">
+        <button id="add" onclick="createlist()">ADD</button>
+    <ul id="list-container">
+        <li>
+        </li>
+        </ul>
+        </center>
+    </body>
+</html>
+
+<script>
+    var para = document.getElementById("list-container")
+    var input = document.getElementById("input")
+
+    function createlist()
+    {
+        if(input.value.length == 0){
+            alert("please Enter The Value..!")
+        }
+        else if(input.value.length <= 20){
+            var create = document.createElement("li")
+            create.innerHTML = input.value + "<button id='del'onclick='deliteam(event)'>Delete</button>"
+            para.append(create)
+        }
+        else{
+            alert("Enter The Limit..!")
+        }
+    }
+    function deliteam(event)
+    { 
+        event.target.parentElement.remove()
+    }
+</script>
